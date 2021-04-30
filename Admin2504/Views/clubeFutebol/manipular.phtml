@@ -21,10 +21,10 @@
                 <div class="panel">
                     <div class="panel-body">
                         <div class="col-md-12 col-sm-12">
-                            <?php if ($dados_cargo): ?> 
-                                <h3 class="animated fadeInLeft">Área Administrativa > Cargo > Alterar</h3>
+                            <?php if ($dados_clube): ?> 
+                                <h3 class="animated fadeInLeft">Área Administrativa > Escola de Futebol > Alterar</h3>
                             <?php else: ?>
-                                <h3 class="animated fadeInLeft">Área Administrativa > Cargo > Cadastrar</h3>
+                                <h3 class="animated fadeInLeft">Área Administrativa > Escola de Futebol > Cadastrar</h3>
                             <?php endif; ?>
 
                             <ul class="nav navbar-nav animated fadeInRight">
@@ -49,20 +49,23 @@
                             <div class="panel form-element-padding">
                                 <div id="msgformulario" class="alert alert-primary" role="alert">* Campos Obrigatórios!</div>
                                 <div class="panel-heading">
-                                    <?php if ($dados_cargo): ?>
-                                        <h4>Cargo > Alterar</h4>
+                                    <?php if ($dados_clube): ?>
+                                        <h4>Escola de Futebol > Alterar</h4>
                                     <?php else: ?>
-                                        <h4>Cargo > Novo</h4>
+                                        <h4>Escola de Futebol > Novo</h4>
                                     <?php endif; ?>
                                 </div>
                                 <div class="panel-body" style="padding-bottom:30px;">
                                     <div class="col-md-12">
-                                        <form class="cmxform" name="frmCadAulas" method="POST" action="<?= url()->route('cargo.salvar'); ?>">
-                                            <?php if ($dados_cargo): ?>
-                                                <input type="hidden" name="id" value="<?= $dados_cargo->id; ?>">
+                                        <form class="cmxform" name="frmCadAulas" method="POST" action="<?= url()->route('clubeFutebol.salvar'); ?>">
+                                            <?php if ($dados_clube): ?>
+                                                <input type="hidden" name="id" value="<?= $dados_clube->id; ?>">
                                             <?php endif; ?>
                                             <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_nome" class="col-sm-2 control-label text-right">Nome*</label>
-                                                <div class="col-sm-10"><input value="<?= $dados_cargo ? $dados_cargo->nome : '' ?>" name="nome" required aria-required="true" type="text" class="form-control"></div>
+                                                <div class="col-sm-10"><input value="<?= $dados_clube ? $dados_clube->nome : '' ?>" name="nome" required aria-required="true" type="text" class="form-control"></div>
+                                            </div>
+                                            <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_nome" class="col-sm-2 control-label text-right">CNPJ*</label>
+                                                <div class="col-sm-10"><input value="<?= $dados_clube ? $dados_clube->cnpj : '' ?>" name="cnpj" required aria-required="true" type="text" class="form-control"></div>
                                             </div>
                                             <div class="col-md-12" style="padding-bottom: 10px">
                                                 <div class="col-md-3" style="margin-top:10px; float: right">
@@ -75,7 +78,7 @@
                                                     </button>
                                                 </div>
                                                 <div class="col-md-3" style="margin-top:10px; float: right">
-                                                    <button id="btnCancelar" type="reset" onclick="javascript:window.location.href = '<?=url()->route('cargo.index')?>';" class="btn ripple btn-raised btn-danger">
+                                                    <button id="btnCancelar" type="reset" onclick="javascript:window.location.href = '<?=url()->route('clubeFutebol.index')?>';" class="btn ripple btn-raised btn-danger">
                                                         <div>
                                                             <span class="fa fa-close"></span>
                                                             <span style="margin-left: 10px;">Cancelar</span>

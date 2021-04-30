@@ -21,10 +21,10 @@
                 <div class="panel">
                     <div class="panel-body">
                         <div class="col-md-12 col-sm-12">
-                            <?php if ($dados_cargo): ?> 
-                                <h3 class="animated fadeInLeft">Área Administrativa > Cargo > Alterar</h3>
+                            <?php if ($dados_turma): ?> 
+                                <h3 class="animated fadeInLeft">Área Administrativa > Turma > Alterar</h3>
                             <?php else: ?>
-                                <h3 class="animated fadeInLeft">Área Administrativa > Cargo > Cadastrar</h3>
+                                <h3 class="animated fadeInLeft">Área Administrativa > Turma > Cadastrar</h3>
                             <?php endif; ?>
 
                             <ul class="nav navbar-nav animated fadeInRight">
@@ -49,21 +49,40 @@
                             <div class="panel form-element-padding">
                                 <div id="msgformulario" class="alert alert-primary" role="alert">* Campos Obrigatórios!</div>
                                 <div class="panel-heading">
-                                    <?php if ($dados_cargo): ?>
-                                        <h4>Cargo > Alterar</h4>
+                                    <?php if ($dados_turma): ?>
+                                        <h4>Turma > Alterar</h4>
                                     <?php else: ?>
-                                        <h4>Cargo > Novo</h4>
+                                        <h4>Turma > Novo</h4>
                                     <?php endif; ?>
                                 </div>
                                 <div class="panel-body" style="padding-bottom:30px;">
                                     <div class="col-md-12">
-                                        <form class="cmxform" name="frmCadAulas" method="POST" action="<?= url()->route('cargo.salvar'); ?>">
-                                            <?php if ($dados_cargo): ?>
-                                                <input type="hidden" name="id" value="<?= $dados_cargo->id; ?>">
+                                        <form class="cmxform" name="frmCadAulas" method="POST" action="<?= url()->route('turma.salvar'); ?>">
+                                            <?php if ($dados_turma): ?>
+                                                <input type="hidden" name="id" value="<?= $dados_turma->id; ?>">
                                             <?php endif; ?>
                                             <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_nome" class="col-sm-2 control-label text-right">Nome*</label>
-                                                <div class="col-sm-10"><input value="<?= $dados_cargo ? $dados_cargo->nome : '' ?>" name="nome" required aria-required="true" type="text" class="form-control"></div>
+                                                <div class="col-sm-10"><input value="<?= $dados_turma ? $dados_turma->nome : '' ?>" name="nome" required aria-required="true" type="text" class="form-control"></div>
                                             </div>
+                                            <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_nome" class="col-sm-2 control-label text-right">Turno*</label>
+                                                <div class="col-sm-10"><input value="<?= $dados_turma ? $dados_turma->turno : '' ?>" name="turno" required aria-required="true" type="text" class="form-control"></div>
+                                            </div>
+                                            <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_nome" class="col-sm-2 control-label text-right">Horario Inicial*</label>
+                                                <div class="col-sm-10"><input value="<?= $dados_turma ? $dados_turma->horario_inicial : '' ?>" name="horario_inicial" required aria-required="true" type="time" class="form-control"></div>
+                                            </div>
+                                            <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_nome" class="col-sm-2 control-label text-right">Horario Termino*</label>
+                                                <div class="col-sm-10"><input value="<?= $dados_turma ? $dados_turma->horario_termino : '' ?>" name="horario_termino" required aria-required="true" type="time" class="form-control"></div>
+                                            </div>
+                                            <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_nome" class="col-sm-2 control-label text-right">Categoria*</label>
+                                                <select name="nome" id="id">
+                                                    <option value="a">Teste1</option>
+                                                    <option value="b">Teste2</option>
+                                                    <option value="c">Teste3</option>
+                                                </select>
+
+                                            </div>
+
+
                                             <div class="col-md-12" style="padding-bottom: 10px">
                                                 <div class="col-md-3" style="margin-top:10px; float: right">
                                                     <button id="btnEnviar" class="btn ripple btn-raised btn-success" type="submit">
@@ -75,7 +94,7 @@
                                                     </button>
                                                 </div>
                                                 <div class="col-md-3" style="margin-top:10px; float: right">
-                                                    <button id="btnCancelar" type="reset" onclick="javascript:window.location.href = '<?=url()->route('cargo.index')?>';" class="btn ripple btn-raised btn-danger">
+                                                    <button id="btnCancelar" type="reset" onclick="javascript:window.location.href = '<?=url()->route('turma.index')?>';" class="btn ripple btn-raised btn-danger">
                                                         <div>
                                                             <span class="fa fa-close"></span>
                                                             <span style="margin-left: 10px;">Cancelar</span>

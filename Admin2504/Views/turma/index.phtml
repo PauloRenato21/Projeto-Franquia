@@ -44,7 +44,7 @@
                 <div class="panel">
                     <div class="panel-body">
                         <div class="col-md-12 col-sm-12">
-                            <h3 class="animated fadeInLeft">Área Administrativa > Cargo</h3>
+                            <h3 class="animated fadeInLeft">Área Administrativa > Turma</h3>
 
                             <ul class="nav navbar-nav animated fadeInRight">
                                 <li><a href="<?=url()->route('index') ?>">Início</a></li>
@@ -74,9 +74,9 @@
                                 <div class="alert alert-warning" role="alert"><?= session()->getAndRemove('_erro'); ?></div>
                             <?php endif; ?>
                             <div style="height: 67px" class="panel-heading">
-                                <h3 style="float: left; width: 150px">Cargo</h3>
+                                <h3 style="float: left">Turma</h3>
                                 <div class="col-md-2" style="margin-top:10px; float: right">
-                                    <button onclick="javascript:window.location.href = '<?= url()->route('cargo.cadastrar') ?>';" class="btn ripple btn-raised btn-success">
+                                    <button onclick="javascript:window.location.href = '<?= url()->route('turma.cadastrar') ?>';" class="btn ripple btn-raised btn-success">
                                         <div>
                                             <span class="fa fa-plus"></span>
                                             <span style="margin-left: 10px;">Novo</span>
@@ -92,17 +92,23 @@
                                             <tr>
                                                 <th style="width: 150px;">ID</th>
                                                 <th>Nome</th>
+                                                <th>Turno</th>
+                                                <th>Horario Inicial</th>
+                                                <th>Horario Termino</th>
                                                 <th style="width: 50px;">Editar</th>
                                                 <th style="width: 50px;">Excluir</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php foreach ($dados_cargo as $dados): ?>
+                                            <?php foreach ($dados_turma as $dados): ?>
                                                 <tr>
                                                     <td><?= $dados->id ?></td>
                                                     <td><?= $dados->nome ?></td>
+                                                    <td><?= $dados->turno ?></td>
+                                                    <td><?= $dados->horario_inicial ?></td>
+                                                    <td><?= $dados->horario_termino ?></td>
                                                     <td align="center">
-                                                        <button onclick="javascript:window.location.href = 'cargo.cadastrar/id/<?= $dados->id ?>';" style="height: 20px; width: 40px; padding: 0;" class="btn ripple btn-raised btn-info">
+                                                        <button onclick="javascript:window.location.href = 'turma.cadastrar/id/<?= $dados->id ?>';" style="height: 20px; width: 40px; padding: 0;" class="btn ripple btn-raised btn-info">
                                                             <span class="fa fa-edit"></span>
                                                         </button>
                                                     </td>
@@ -167,7 +173,7 @@
             }
 
             function confirmaPopupSite(codigo) {
-                window.location.href = 'cargo.excluir/id/' + codigo;
+                window.location.href = 'turma.excluir/id/' + codigo;
                 fecharPopupSite();
             }
         </script>

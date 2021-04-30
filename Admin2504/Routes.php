@@ -20,5 +20,20 @@ return [
     'cargo.index' => ['cargo', 'index'],
     'cargo.cadastrar' => ['cargo', 'cadastrar'],
     'cargo.salvar' => ['cargo', 'salvar'],
-    'cargo.excluir' => ['cargo', 'excluir']
+    'cargo.excluir' => ['cargo', 'excluir'],
+
+    'clubeFutebol.index' =>['Clube','index'],
+    'clubeFutebol.cadastrar' => ['Clube','cadastrar'],
+    'clubeFutebol.salvar' => ['Clube','salvar'],
+    'clubeFutebol.excluir' => ['Clube','excluir'],
+
+    'categoria.index' => ['Categoria','index'],
+    'categoria.cadastrar' => ['Categoria','cadastrar'],
+    'categoria.salvar' => ['Categoria','salvar'],
+    'categoria.excluir' => ['Categoria','excluir'],
+
+    'turma.index' => ['Turma','index'],
+    'turma.cadastrar' => ['Turma','cadastrar'],
+    'turma.salvar' => ['Turma','salvar'],
+    'turma.excluir' => ['Turma','excluir']
 ];
