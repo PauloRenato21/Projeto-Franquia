@@ -74,12 +74,17 @@
                                                 <div class="col-sm-10"><input value="<?= $dados_turma ? $dados_turma->horario_termino : '' ?>" name="horario_termino" required aria-required="true" type="time" class="form-control"></div>
                                             </div>
                                             <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_nome" class="col-sm-2 control-label text-right">Categoria*</label>
-                                                <select name="nome" id="id">
-                                                    <option value="a">Teste1</option>
-                                                    <option value="b">Teste2</option>
-                                                    <option value="c">Teste3</option>
+                                            <div class="col-sm-10">
+                                                <select name="name" id="id" style="margin-top:0px;">
+                                                    <?php
+                                                        foreach($dados_categoria as $count):
+                                                    ?>
+                                                    <option value="<?= $count->id ?>"><?= $count->nome ?></option>
+                                                    <?php
+                                                        endforeach;
+                                                    ?>
                                                 </select>
-
+                                            </div>
                                             </div>
 
 

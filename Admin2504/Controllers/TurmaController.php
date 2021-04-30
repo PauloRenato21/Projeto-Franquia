@@ -3,17 +3,17 @@ namespace Admin2504\Controllers;
 
 use Foundation\Controller;
 use Admin2504\Models\Turma;
-
+use Admin2504\Models\Categoria;
 
 class TurmaController extends Controller
 {
     protected $turma;
-
+    protected $categoria;
 
     public function __construct() {
 
         $this-> turma = new Turma(); 
-     
+        $this->categoria = new Categoria();
     }
 
     public function index() {
@@ -29,6 +29,7 @@ class TurmaController extends Controller
         $id = $this-> getParam('id');
 
         $dados_turma = null;
+        $dados_categoria = $this->categoria->getAllCategoria();
 
         if ($id) {
             $dados_turma = $this-> turma-> getById($id);
@@ -36,6 +37,7 @@ class TurmaController extends Controller
 
         return $this-> render('turma/manipulador', [ 
             'dados_turma' => $dados_turma,
+            'dados_categoria' => $dados_categoria
         ]);
     }
 
