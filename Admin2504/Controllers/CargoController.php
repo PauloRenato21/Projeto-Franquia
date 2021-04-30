@@ -37,7 +37,7 @@ class CargoController extends Controller
 
     public function salvar() {
         $id = $this-> getParam('id');
-
+        
         $dados = [
             'nome' => input()-> get('nome')
         ];
@@ -61,7 +61,9 @@ class CargoController extends Controller
     }
 
     public function excluir() {
-        $idFix = $this->getParam('id');
+        $idFix = $this-> getParam('id');
+        // var_dump($idFix);
+        // die();
         if($this->cargo->deleteCargoById($idFix)){
             session()->put('_sucesso', 'Registro excluído com sucesso');
         }else{

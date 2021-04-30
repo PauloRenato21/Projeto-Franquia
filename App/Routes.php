@@ -13,12 +13,10 @@ return  [
      */ 
 
     'index' => ['index', 'index'],
-    'contact' => ['contact', 'index'],
-    'generic' => ['generic', 'index'],
-    'elements' => ['elements', 'index'],
-    'dicas' => ['dicas', 'index'],
-    'aulas' => ['aulas', 'index'],
-    'novidades' => ['novidades', 'index'],
-    'dicionario' => ['dicionario', 'index']
-    //'about' => ['about', 'index'] 
+
+    'atleta' => ['atleta', 'cadastrar'],
+    'atleta.salvar' => ['atleta', 'salvar'],
+
+    'responsavel' => ['responsavel', 'cadastrar'],
+    'responsavel.salvar' => ['responsavel', 'salvar']
 ];

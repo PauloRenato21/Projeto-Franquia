@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Cadastro Atleta</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="<?= assets()->css('main.css'); ?>" />
+	<noscript>
+		<link rel="stylesheet" href="<?= assets()->css('noscript.css'); ?>" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+		<div id="wrapper" class="fade-in">
+
+			<!-- Header -->
+			<header id="header">
+				<a href="responsavel" class="logo">Cadastro Responsável</a>
+			</header>
+
+			<!-- Nav -->
+			<nav id="nav">
+				<ul class="links">
+					<li><a href="index">Home</a></li>
+					<li><a href="atleta">Cadastro Atleta</a></li>
+					<li class="active"><a href="responsavel">Cadastro Responsável</a></li>
+				</ul>
+			</nav>
+
+			<!-- Main -->
+			<div id="main">
+
+				<!-- start: conteúdo central -->
+                <div class="form-element">
+                    <div class="col-md-12 padding-0">
+                        <div class="col-md-12">
+                            <div class="panel form-element-padding">
+                                <div id="msgformulario" class="alert alert-primary" role="alert">* Campos Obrigatórios!</div>
+                                <div class="panel-heading">
+                                    <?php if ($dados_responsavel): ?>
+                                        <h4>Responsável > Alterar</h4>
+                                    <?php else: ?>
+                                        <h4>Responsável > Novo</h4>
+                                    <?php endif; ?>
+                                </div>
+                                <div class="panel-body" style="padding-bottom:30px;">
+                                    <div class="col-md-12">
+                                        <form class="cmxform" name="frmResponsavel" method="POST" action="<?= url()->route('responsavel.salvar'); ?>">
+                                            <?php if ($dados_responsavel): ?>
+                                                <input type="hidden" name="id" value="<?= $dados_responsavel->id; ?>">
+                                            <?php endif; ?>
+                                            <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_nome" class="col-sm-2 control-label text-right">Nome*</label>
+                                                <div class="col-sm-10"><input value="<?= $dados_responsavel ? $dados_responsavel->nome : '' ?>" name="nome" required aria-required="true" type="text" class="form-control"></div>
+                                            </div>
+                                            <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_cpf" class="col-sm-2 control-label text-right">CPF*</label>
+                                                <div class="col-sm-10"><input value="<?= $dados_responsavel ? $dados_responsavel->cpf : '' ?>" name="cpf" required aria-required="true" pattern="[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}" placeholder="000.000.000-00" type="text" class="form-control"></div>
+                                            </div>
+                                            <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_grau_parentesco" class="col-sm-2 control-label text-right">Parentesco*</label>
+                                                <div class="col-sm-10"><input value="<?= $dados_responsavel ? $dados_responsavel->grau_parentesco : '' ?>" name="grau_parentesco" required aria-required="true" type="text" class="form-control"></div>
+                                            </div>
+                                            <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_profissao" class="col-sm-2 control-label text-right">Profissão*</label>
+                                                <div class="col-sm-10"><input value="<?= $dados_responsavel ? $dados_responsavel->profissao : '' ?>" name="profissao" required aria-required="true" type="text" class="form-control"></div>
+                                            </div>
+                                            <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_local_trabalho" class="col-sm-2 control-label text-right">Local de trabalho*</label>
+                                                <div class="col-sm-10"><input value="<?= $dados_responsavel ? $dados_responsavel->local_trabalho : '' ?>" name="local_trabalho" required aria-required="true" type="text" class="form-control"></div>
+                                            </div>
+                                            <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_telefone" class="col-sm-2 control-label text-right">Telefone*</label>
+                                                <div class="col-sm-10"><input value="<?= $dados_responsavel ? $dados_responsavel->telefone : '' ?>" name="telefone" required aria-required="true" pattern="[0-9]{2} [0-9]{5}-[0-9]{4}" placeholder="00 00000-0000" type="tel" class="form-control"></div>
+                                            </div>
+                                            <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_email" class="col-sm-2 control-label text-right">Email*</label>
+                                                <div class="col-sm-10"><input value="<?= $dados_responsavel ? $dados_responsavel->email : '' ?>" name="email" required aria-required="true" placeholder="email@email.com" type="email" class="form-control"></div>
+                                            </div>
+                                            <div class="col-md-12" style="padding-bottom: 10px">
+                                                <div class="col-md-3" style="margin-top:10px; float: right">
+                                                    <button id="btnEnviar" class="btn ripple btn-raised btn-success" type="submit">
+                                                        <div>
+                                                            <span class="fa fa-save"></span>
+                                                            <span style="margin-left: 10px;">Salvar</span>
+                                                            <span class="ink animate" style="height: 87px; width: 87px; top: -35.5px; left: -1px;"></span>
+                                                        </div>
+                                                    </button>
+                                                </div>
+                                                <div class="col-md-3" style="margin-top:10px; float: right">
+                                                    <button id="btnCancelar" onclick="javascript:window.location.href = '<?= url()->route('index') ?>';" class="btn ripple btn-raised btn-danger" type="reset">
+                                                        <div>
+                                                            <span class="fa fa-close"></span>
+                                                            <span style="margin-left: 10px;">Cancelar</span>
+                                                            <span class="ink animate" style="height: 87px; width: 87px; top: -35.5px; left: -1px;"></span>
+                                                        </div>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end: conteúdo central -->
+
+			</div>
+
+			<!-- Copyright -->
+			<div id="copyright">
+				<ul>
+					<li>&copy; Untitled</li>
+					<li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+
+		</div>
+
+		<!-- Scripts -->
+		<script src="<?= assets()->js("jquery.min.js") ?>"></script>
+		<script src="<?= assets()->js("jquery.scrollex.min.js") ?>"></script>
+		<script src="<?= assets()->js("jquery.scrolly.min.js") ?>"></script>
+		<script src="<?= assets()->js("browser.min.js") ?>"></script>
+		<script src="<?= assets()->js("breakpoints.min.js") ?>"></script>
+		<script src="<?= assets()->js("util.js") ?>"></script>
+		<script src="<?= assets()->js("main.js") ?>"></script>
+		</body>
+
+</html>

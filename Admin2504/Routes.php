@@ -20,5 +20,15 @@ return [
     'cargo.index' => ['cargo', 'index'],
     'cargo.cadastrar' => ['cargo', 'cadastrar'],
     'cargo.salvar' => ['cargo', 'salvar'],
-    'cargo.excluir' => ['cargo', 'excluir']
+    'cargo.excluir' => ['cargo', 'excluir'],
+
+    'atleta.index' => ['atleta', 'index'],
+    'atleta.cadastrar' => ['atleta', 'cadastrar'],
+    'atleta.salvar' => ['atleta', 'salvar'],
+    'atleta.excluir' => ['atleta', 'excluir'],
+
+    'responsavel.index' => ['responsavel', 'index'],
+    'responsavel.cadastrar' => ['responsavel', 'cadastrar'],
+    'responsavel.salvar' => ['responsavel', 'salvar'],
+    'responsavel.excluir' => ['responsavel', 'excluir']
 ];
