@@ -30,5 +30,20 @@ return [
     'responsavel.index' => ['responsavel', 'index'],
     'responsavel.cadastrar' => ['responsavel', 'cadastrar'],
     'responsavel.salvar' => ['responsavel', 'salvar'],
-    'responsavel.excluir' => ['responsavel', 'excluir']
+    'responsavel.excluir' => ['responsavel', 'excluir'],
+    
+    'clubeFutebol.index' =>['Clube','index'],
+    'clubeFutebol.cadastrar' => ['Clube','cadastrar'],
+    'clubeFutebol.salvar' => ['Clube','salvar'],
+    'clubeFutebol.excluir' => ['Clube','excluir'],
+
+    'categoria.index' => ['Categoria','index'],
+    'categoria.cadastrar' => ['Categoria','cadastrar'],
+    'categoria.salvar' => ['Categoria','salvar'],
+    'categoria.excluir' => ['Categoria','excluir'],
+
+    'turma.index' => ['Turma','index'],
+    'turma.cadastrar' => ['Turma','cadastrar'],
+    'turma.salvar' => ['Turma','salvar'],
+    'turma.excluir' => ['Turma','excluir']
 ];
