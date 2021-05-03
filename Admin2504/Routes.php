@@ -50,5 +50,10 @@ return [
     'turma.index' => ['Turma','index'],
     'turma.cadastrar' => ['Turma','cadastrar'],
     'turma.salvar' => ['Turma','salvar'],
-    'turma.excluir' => ['Turma','excluir']
+    'turma.excluir' => ['Turma','excluir'],
+
+    'funcionario.index' => ['Funcionario','index'],
+    'funcionario.cadastrar' => ['Funcionario','cadastrar'],
+    'funcionario.salvar' => ['Funcionario','salvar'],
+    'funcionario.excluir' => ['Funcionario','excluir']
 ];
