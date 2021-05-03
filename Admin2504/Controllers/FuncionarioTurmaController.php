@@ -1,9 +1,8 @@
 <?php
 namespace Admin2504\Controllers;
 
-use Admin2504\Models\Turma;
 use Foundation\Controller;
-use Admin2504\Models\Funcionario;
+use Admin2504\Models\FuncionarioTurma;
 
 class FuncionarioTurmaController extends Controller
 {
@@ -12,8 +11,8 @@ class FuncionarioTurmaController extends Controller
 
     public function __construct() {
 
-        $this-> funcionario = new Funcionario();
-        $this->turma = new Turma();
+        $this-> funcionario = new FuncionarioTurma();
+        $this->turma = new FuncionarioTurma();
     }
 
     public function vincular() {
