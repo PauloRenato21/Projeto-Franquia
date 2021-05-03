@@ -37,6 +37,11 @@ return [
     'clubeFutebol.salvar' => ['Clube','salvar'],
     'clubeFutebol.excluir' => ['Clube','excluir'],
 
+    'franquia.index' => ['Franquia','index'],
+    'franquia.cadastrar' => ['Franquia','cadastrar'],
+    'franquia.salvar' => ['Franquia','salvar'],
+    'franquia.excluir' => ['Franquia','excluir'],
+
     'categoria.index' => ['Categoria','index'],
     'categoria.cadastrar' => ['Categoria','cadastrar'],
     'categoria.salvar' => ['Categoria','salvar'],

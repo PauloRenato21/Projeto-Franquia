@@ -21,10 +21,10 @@
                 <div class="panel">
                     <div class="panel-body">
                         <div class="col-md-12 col-sm-12">
-                            <?php if ($dados_turma): ?> 
-                                <h3 class="animated fadeInLeft">Área Administrativa > Turma > Alterar</h3>
+                            <?php if ($dados_franquia): ?> 
+                                <h3 class="animated fadeInLeft">Área Administrativa > Franquia > Alterar</h3>
                             <?php else: ?>
-                                <h3 class="animated fadeInLeft">Área Administrativa > Turma > Cadastrar</h3>
+                                <h3 class="animated fadeInLeft">Área Administrativa > Franquia > Cadastrar</h3>
                             <?php endif; ?>
 
                             <ul class="nav navbar-nav animated fadeInRight">
@@ -36,6 +36,7 @@
                                 <li><a href="<?=url()->route('turma.index')?>">Turma</a></li>
                                 <li><a href="<?=url()->route('categoria.index')?>">Categoria</a></li>
                                 <li><a href="<?=url()->route('clubeFutebol.index')?>">Clube Futebol</a></li>
+                                <li><a href="<?=url()->route('franquia.index')?>">Franquia</a></li>
                             </ul>
                         </div>
                     </div>
@@ -49,58 +50,61 @@
                             <div class="panel form-element-padding">
                                 <div id="msgformulario" class="alert alert-primary" role="alert">* Campos Obrigatórios!</div>
                                 <div class="panel-heading">
-                                    <?php if ($dados_turma): ?>
-                                        <h4>Turma > Alterar</h4>
+                                    <?php if ($dados_franquia): ?>
+                                        <h4>Franquia > Alterar</h4>
                                     <?php else: ?>
-                                        <h4>Turma > Novo</h4>
+                                        <h4>Franquia > Novo</h4>
                                     <?php endif; ?>
                                 </div>
                                 <div class="panel-body" style="padding-bottom:30px;">
                                     <div class="col-md-12">
-                                        <form class="cmxform" name="frmCadAulas" method="POST" action="<?= url()->route('turma.salvar'); ?>">
-                                            <?php if ($dados_turma): ?>
-                                                <input type="hidden" name="id" value="<?= $dados_turma->id; ?>">
+                                        <form class="cmxform" name="frmCargo" method="POST" action="<?= url()->route('franquia.salvar'); ?>">
+                                            <?php if ($dados_franquia): ?>
+                                                <input type="hidden" name="id" value="<?= $dados_franquia->id; ?>">
                                             <?php endif; ?>
                                             <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_nome" class="col-sm-2 control-label text-right">Nome*</label>
-                                                <div class="col-sm-10"><input value="<?= $dados_turma ? $dados_turma->nome : '' ?>" name="nome" required aria-required="true" type="text" class="form-control"></div>
+                                                <div class="col-sm-10"><input value="<?= $dados_franquia ? $dados_franquia->nome : '' ?>" name="nome" required aria-required="true" type="text" class="form-control"></div>
                                             </div>
-                                            <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_nome" class="col-sm-2 control-label text-right">Turno*</label>
-                                                <div class="col-sm-10"><input value="<?= $dados_turma ? $dados_turma->turno : '' ?>" name="turno" required aria-required="true" type="text" class="form-control"></div>
+                                            <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_nome" class="col-sm-2 control-label text-right">CNPJ*</label>
+                                                <div class="col-sm-10"><input value="<?= $dados_franquia ? $dados_franquia->cnpj : '' ?>" name="cnpj" required aria-required="true" type="text" class="form-control" placeholder="00.000.000/0000-00"></div>
                                             </div>
-                                            <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_nome" class="col-sm-2 control-label text-right">Horario Inicial*</label>
-                                                <div class="col-sm-10"><input value="<?= $dados_turma ? $dados_turma->horario_inicial : '' ?>" name="horario_inicial" required aria-required="true" type="time" class="form-control"></div>
+                                            <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_nome" class="col-sm-2 control-label text-right">Endereço Rua*</label>
+                                                <div class="col-sm-10"><input value="<?= $dados_franquia ? $dados_franquia->endereco_rua : '' ?>" name="rua" required aria-required="true" type="text" class="form-control"></div>
                                             </div>
-                                            <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_nome" class="col-sm-2 control-label text-right">Horario Termino*</label>
-                                                <div class="col-sm-10"><input value="<?= $dados_turma ? $dados_turma->horario_termino : '' ?>" name="horario_termino" required aria-required="true" type="time" class="form-control"></div>
+                                            <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_nome" class="col-sm-2 control-label text-right">Endereço Número*</label>
+                                                <div class="col-sm-10"><input value="<?= $dados_franquia ? $dados_franquia->endereco_numero : '' ?>" name="numero" required aria-required="true" type="text" class="form-control"></div>
                                             </div>
-                                            <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_nome" class="col-sm-2 control-label text-right">Categoria*</label>
+                                            <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_nome" class="col-sm-2 control-label text-right">Endereço Bairro*</label>
+                                                <div class="col-sm-10"><input value="<?= $dados_franquia ? $dados_franquia->endereco_bairro : '' ?>" name="bairro" required aria-required="true" type="text" class="form-control"></div>
+                                            </div>
+                                            <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_nome" class="col-sm-2 control-label text-right">Endereço Cep*</label>
+                                                <div class="col-sm-10"><input value="<?= $dados_franquia ? $dados_franquia->endereco_CEP : '' ?>" name="cep" required aria-required="true" type="text" class="form-control" pattern="[0-9]{5}-[0-9]{3}" placeholder="00000-000"></div>
+                                            </div>
+                                            <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_nome" class="col-sm-2 control-label text-right">Estado*</label>
+                                                <div class="col-sm-10"><input value="<?= $dados_franquia ? $dados_franquia->estado : '' ?>" name="estado" required aria-required="true" type="text" class="form-control"></div>
+                                            </div>
+                                            <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_nome" class="col-sm-2 control-label text-right">Cidade*</label>
+                                                <div class="col-sm-10"><input value="<?= $dados_franquia ? $dados_franquia->cidade : '' ?>" name="cidade" required aria-required="true" type="text" class="form-control"></div>
+                                            </div>
+                                            <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_nome" class="col-sm-2 control-label text-right">Telefone*</label>
+                                                <div class="col-sm-10"><input value="<?= $dados_franquia ? $dados_franquia->telefone : '' ?>" name="telefone" required aria-required="true" type="text" class="form-control" pattern="[0-9]{2}[0-9]{5}-[0-9]{4}" placeholder="00 00000-0000"></div>
+                                            </div>
+                                            <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_nome" class="col-sm-2 control-label text-right">Email*</label>
+                                                <div class="col-sm-10"><input value="<?= $dados_franquia ? $dados_franquia->email : '' ?>" name="email" required aria-required="true" type="email" class="form-control" placeholder="email@email.com"></div>
+                                            </div>
+                                            <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_nome" class="col-sm-2 control-label text-right">Clube Futebol*</label>
                                             <div class="col-sm-10">
-                                                <select name="categoria" id="id" style="margin-top:0px;">
+                                                <select name="clube" id="id" style="margin-top: 0px;">
                                                     <?php
-                                                        foreach($dados_categoria as $count):
+                                                        foreach($dados_clube as $count){
                                                     ?>
-                                                    <option value="<?= $count->id ?>"><?= $count->nome ?></option>
+                                                    <option value="<?=$count->id?>"><?=$count->nome?></option>
                                                     <?php
-                                                        endforeach;
+                                                        }
                                                     ?>
                                                 </select>
                                             </div>
                                             </div>
-                                            <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_nome" class="col-sm-2 control-label text-right">Franquia*</label>
-                                            <div class="col-sm-10">
-                                                <select name="franquia" id="id" style="margin-top:0px;">
-                                                    <?php
-                                                        foreach($dados_franquia as $count):
-                                                    ?>
-                                                    <option value="<?= $count->id ?>"><?= $count->nome ?></option>
-                                                    <?php
-                                                        endforeach;
-                                                    ?>
-                                                </select>
-                                            </div>
-                                            </div>
-
-
                                             <div class="col-md-12" style="padding-bottom: 10px">
                                                 <div class="col-md-3" style="margin-top:10px; float: right">
                                                     <button id="btnEnviar" class="btn ripple btn-raised btn-success" type="submit">
@@ -112,7 +116,7 @@
                                                     </button>
                                                 </div>
                                                 <div class="col-md-3" style="margin-top:10px; float: right">
-                                                    <button id="btnCancelar" type="reset" onclick="javascript:window.location.href = '<?=url()->route('turma.index')?>';" class="btn ripple btn-raised btn-danger">
+                                                    <button id="btnCancelar" onclick="javascript:window.location.href = '<?= url()->route('franquia.index') ?>';" class="btn ripple btn-raised btn-danger" type="reset">
                                                         <div>
                                                             <span class="fa fa-close"></span>
                                                             <span style="margin-left: 10px;">Cancelar</span>
@@ -155,58 +159,6 @@
 
         <script src="<?=assets()->js('main.js');?>"></script>
 
-        <script type="text/javascript">
-            $(document).ready(function () {
-
-                $('#summernote').summernote({
-                    height: 400,
-                    toolbar: [
-                        // [groupName, [list of button]]
-                        ['style', ['bold', 'italic', 'underline', 'clear']],
-                        ['font', ['strikethrough', 'superscript', 'subscript']],
-                        ['picture', ['picture']],
-                        ['video', ['video']]
-                    ]
-                });
-
-                var valor = $("#conteudo").text();
-                $('.note-editable').html(valor);
-            });
-
-            function validacaoF(form) {
-                $('#lbl_titulo').removeClass('alertaFrm');
-                $('#lbl_chamada').removeClass('alertaFrm');
-
-                if (form.titulo.value.replace(/^\s+|\s+$/g, "").length <= 3) {
-                    form.titulo.focus();
-                    $('#msgformulario').html('Título inválido! Informe-o corretamente.');
-                    $('#msgformulario').removeClass('alert-primary');
-                    $('#msgformulario').addClass('alert-danger');
-                    $('#lbl_titulo').addClass('alertaFrm');
-                    return false;
-                } else if (form.chamada.value.replace(/^\s+|\s+$/g, "").length <= 3) {
-                    form.chamada.focus();
-                    $('#msgformulario').html('Chamada inválida! Informe-a corretamente.');
-                    $('#msgformulario').removeClass('alert-primary');
-                    $('#msgformulario').addClass('alert-danger');
-                    $('#lbl_chamada').addClass('alertaFrm');
-                    return false;
-                }
-            }
-
-            function event_btnEnviarClick()
-            {
-                var valor = $('.note-editable').html();
-                $("#conteudo").text(valor);
-
-                if (validacaoF(document.frmCadAulas) != false) {
-                    document.frmCadAulas.submit();
-                } else {
-                    return false;
-                }
-            }
-            $('#btnEnviar').click(event_btnEnviarClick);
-        </script>
         <!-- end: Javascript -->
     </body>
 </html>
