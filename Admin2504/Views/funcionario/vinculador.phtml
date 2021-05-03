@@ -58,45 +58,12 @@
                                 </div>
                                 <div class="panel-body" style="padding-bottom:30px;">
                                     <div class="col-md-12">
-                                        <form class="cmxform" name="frmCadAulas" method="POST" action="<?= url()->route('funcionario.salvar'); ?>">
-                                            <?php if ($dados_funcionario): ?>
-                                                <input type="hidden" name="id" value="<?= $dados_funcionario->id; ?>">
-                                            <?php endif; ?>
-                                            <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_nome" class="col-sm-2 control-label text-right">Nome*</label>
-                                                <div class="col-sm-10"><input value="<?= $dados_funcionario ? $dados_funcionario->nome : '' ?>" name="nome" required aria-required="true" type="text" class="form-control"></div>
-                                            </div>
-                                            <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_nome" class="col-sm-2 control-label text-right">Data de Nascimento*</label>
-                                                <div class="col-sm-10"><input value="<?= $dados_funcionario ? $dados_funcionario->dt_nascimento : '' ?>" name="dt_nascimento" required aria-required="true" type="date" class="form-control"></div>
-                                            </div>                
-                                            <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_nome" class="col-sm-2 control-label text-right">CPF*</label>
-                                                <div class="col-sm-10"><input value="<?= $dados_funcionario ? $dados_funcionario->cpf : '' ?>" name="cpf" required aria-required="true" type="text" class="form-control"></div>
-                                            </div>
-                                            <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_nome" class="col-sm-2 control-label text-right">RG*</label>
-                                                <div class="col-sm-10"><input value="<?= $dados_funcionario ? $dados_funcionario->rg : '' ?>" name="rg" required aria-required="true" type="text" class="form-control"></div>
-                                            </div>
-                                            <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_nome" class="col-sm-2 control-label text-right">Naturalidade*</label>
-                                                <div class="col-sm-10"><input value="<?= $dados_funcionario ? $dados_funcionario->naturalidade : '' ?>" name="naturalidade" required aria-required="true" type="text" class="form-control"></div>
-                                            </div>
-                                            <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_nome" class="col-sm-2 control-label text-right">Endereço Rua*</label>
-                                                <div class="col-sm-10"><input value="<?= $dados_funcionario ? $dados_funcionario->endereco_rua : '' ?>" name="endereco_rua" required aria-required="true" type="text" class="form-control"></div>
-                                            </div>
-                                            <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_nome" class="col-sm-2 control-label text-right">Endereço Número*</label>
-                                                <div class="col-sm-10"><input value="<?= $dados_funcionario ? $dados_funcionario->endereco_numero : '' ?>" name="endereco_numero" required aria-required="true" type="text" class="form-control"></div>
-                                            </div>
-                                            <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_nome" class="col-sm-2 control-label text-right">Endereço Bairro*</label>
-                                                <div class="col-sm-10"><input value="<?= $dados_funcionario ? $dados_funcionario->endereco_bairro : '' ?>" name="endereco_bairro" required aria-required="true" type="text" class="form-control"></div>
-                                            </div>
-                                            <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_nome" class="col-sm-2 control-label text-right">Telefone*</label>
-                                                <div class="col-sm-10"><input value="<?= $dados_funcionario ? $dados_funcionario->telefone : '' ?>" name="telefone" required aria-required="true" type="text" class="form-control"></div>
-                                            </div>
-                                            <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_nome" class="col-sm-2 control-label text-right">Email*</label>
-                                                <div class="col-sm-10"><input value="<?= $dados_funcionario ? $dados_funcionario->email : '' ?>" name="email" required aria-required="true" type="email" class="form-control"></div>
-                                            </div>
+                                        <form class="cmxform" name="frmCadAulas" method="POST" action="<?= url()->route('funcionarioTurma.salvar'); ?>">
                                             <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_nome" class="col-sm-2 control-label text-right">Franquia*</label>
                                                 <div class="col-sm-10">
-                                                    <select name="franquia_id" id="id" style="margin-top: 0px;">
+                                                    <select name="funcionario_id" id="id" style="margin-top: 0px;">
                                                         <?php
-                                                            foreach($dados_franquia as $count){
+                                                            foreach($dados_funcionario as $count){
                                                         ?>
                                                         <option value="<?=$count->id?>"><?=$count->nome?></option>
                                                         <?php
@@ -107,9 +74,9 @@
                                             </div>
                                             <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_nome" class="col-sm-2 control-label text-right">Franquia*</label>
                                                 <div class="col-sm-10">
-                                                    <select name="cargo_id" id="id" style="margin-top: 0px;">
+                                                    <select name="turma_id" id="id" style="margin-top: 0px;">
                                                         <?php
-                                                            foreach($dados_cargo as $count){
+                                                            foreach($dados_turma as $count){
                                                         ?>
                                                         <option value="<?=$count->id?>"><?=$count->nome?></option>
                                                         <?php

@@ -55,5 +55,8 @@ return [
     'funcionario.index' => ['Funcionario','index'],
     'funcionario.cadastrar' => ['Funcionario','cadastrar'],
     'funcionario.salvar' => ['Funcionario','salvar'],
-    'funcionario.excluir' => ['Funcionario','excluir']
+    'funcionario.excluir' => ['Funcionario','excluir'],
+
+    'funcionarioTurma.vincular' => ['FuncionarioTurma','vincular'],
+    'funcionarioTurma.salvar' => ['FuncionarioTurma','salvar']
 ];
