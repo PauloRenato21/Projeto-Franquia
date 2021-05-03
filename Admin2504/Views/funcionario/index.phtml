@@ -110,7 +110,7 @@
                                                 <tr>
                                                     <td><?= $dados->id ?></td>
                                                     <td><?= $dados->nome ?></td>
-                                                    <td><?= $dados->dt_nascimento ?></td>
+                                                    <td><?= date("d/m/Y", strtotime($dados->dt_nascimento))?></td>
                                                     <td><?= $dados->cpf ?></td>
                                                     <td><?= $dados->rg ?></td>
                                                     <td><?= $dados->naturalidade ?></td>
