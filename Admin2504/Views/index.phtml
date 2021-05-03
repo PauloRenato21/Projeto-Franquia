@@ -39,85 +39,172 @@
                 <!-- end: Top Menu -->
 
                 <!-- start: conteúdo central -->
-                <!--
+                
                 <div class="col-md-12" style="padding:20px;">
                     <div class="col-md-12 padding-0">
                         <div class="col-md-12 padding-0">
                             <div class="col-md-12 padding-0">
                                 <div class="col-md-4">
                                     <div class="panel box-v1">
-                                        <div class="panel-heading bg-white border-none">
-                                            <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
-                                                <h4 class="text-left">Total de acessos</h4>
+                                        <a href="<?=url()->route('atleta.index')?>">
+                                            <div class="panel-heading bg-white border-none">
+                                                <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                                                    <h4 class="text-left">Atleta</h4>
+                                                </div>
+                                                <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                                                    <h4><span class="icon-menu icons icon text-right"></span></h4>
+                                                </div>
                                             </div>
-                                            <div class="col-md-6 col-sm-6 col-xs-6 text-right">
-                                                <h4>
-                                                    <span class="icon-user icons icon text-right"></span>
-                                                </h4>
+                                            <div class="panel-body text-center">
+                                                <p>Visualizar página de atletas</p>
+                                                <hr/>
                                             </div>
-                                        </div>
-                                        <div class="panel-body text-center">
-                                            
-                                            <p>Visualizações de página</p>
-                                            <hr/>
-                                        </div>
+                                        </a>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="panel box-v1">
-                                        <div class="panel-heading bg-white border-none">
-                                            <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
-                                                <h4 class="text-left">Últimos 12 meses</h4>
+                                        <a href="<?=url()->route('responsavel.index')?>">
+                                            <div class="panel-heading bg-white border-none">
+                                                <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                                                    <h4 class="text-left">Responsável</h4>
+                                                </div>
+                                                <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                                                    <h4><span class="icon-menu icons icon text-right"></span></h4>
+                                                </div>
                                             </div>
-                                            <div class="col-md-6 col-sm-6 col-xs-6 text-right">
-                                                <h4>
-                                                    <span class="icon-user icons icon text-right"></span>
-                                                </h4>
+                                            <div class="panel-body text-center">
+                                                <p>Visualizar página de responsáveis</p>
+                                                <hr/>
                                             </div>
-                                        </div>
-                                        <div class="panel-body text-center">
-                                            
-                                            <p>Visualizações de página</p>
-                                            <hr/>
-                                        </div>
+                                        </a>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="panel box-v1">
-                                        <div class="panel-heading bg-white border-none">
-                                            <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
-                                                <h4 class="text-left">Últimos 30 dias</h4>
+                                        <a href="<?=url()->route('funcionario.index')?>">
+                                            <div class="panel-heading bg-white border-none">
+                                                <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                                                    <h4 class="text-left">Funcionário</h4>
+                                                </div>
+                                                <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                                                    <h4><span class="icon-menu icons icon text-right"></span></h4>
+                                                </div>
                                             </div>
-                                            <div class="col-md-6 col-sm-6 col-xs-6 text-right">
-                                                <h4>
-                                                    <span class="icon-user icons icon text-right"></span>
-                                                </h4>
+                                            <div class="panel-body text-center">
+                                                <p>Visualizar página de funcionários</p>
+                                                <hr/>
                                             </div>
-                                        </div>
-                                        <div class="panel-body text-center">
-                                            
-                                            <p>Visualizações de página</p>
-                                            <hr/>
-                                        </div>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-md-12" >
-                        <div class="panel">
-                            <div class="panel-heading-white panel-heading">
-                                <h4>Visualizações de páginas dos últimos 12 meses</h4>
-                            </div>
-                            <div class="panel-body">
-                                <div class="col-md-12">
-                                    <canvas class="line-chart" width="3" height="1"></canvas>
+                    <div class="col-md-12 padding-0">
+                        <div class="col-md-12 padding-0">
+                            <div class="col-md-12 padding-0">
+                                <div class="col-md-4">
+                                    <div class="panel box-v1">
+                                        <a href="<?=url()->route('cargo.index')?>">
+                                            <div class="panel-heading bg-white border-none">
+                                                <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                                                    <h4 class="text-left">Cargo</h4>
+                                                </div>
+                                                <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                                                    <h4><span class="icon-menu icons icon text-right"></span></h4>
+                                                </div>
+                                            </div>
+                                            <div class="panel-body text-center">
+                                                <p>Visualizar página de cargos</p>
+                                                <hr/>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="panel box-v1">
+                                        <a href="<?=url()->route('turma.index')?>">
+                                            <div class="panel-heading bg-white border-none">
+                                                <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                                                    <h4 class="text-left">Turma</h4>
+                                                </div>
+                                                <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                                                    <h4><span class="icon-menu icons icon text-right"></span></h4>
+                                                </div>
+                                            </div>
+                                            <div class="panel-body text-center">
+                                                <p>Visualizar página de turmas</p>
+                                                <hr/>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="panel box-v1">
+                                        <a href="<?=url()->route('categoria.index')?>">
+                                            <div class="panel-heading bg-white border-none">
+                                                <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                                                    <h4 class="text-left">Categoria</h4>
+                                                </div>
+                                                <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                                                    <h4><span class="icon-menu icons icon text-right"></span></h4>
+                                                </div>
+                                            </div>
+                                            <div class="panel-body text-center">
+                                                <p>Visualizar página de categorias</p>
+                                                <hr/>
+                                            </div>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div> -->
+                    <div class="col-md-12 padding-0">
+                        <div class="col-md-12 padding-0">
+                            <div class="col-md-12 padding-0">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-4">
+                                    <div class="panel box-v1">
+                                        <a href="<?=url()->route('clubeFutebol.index')?>">
+                                            <div class="panel-heading bg-white border-none">
+                                                <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                                                    <h4 class="text-left">Clube Futebol</h4>
+                                                </div>
+                                                <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                                                    <h4><span class="icon-menu icons icon text-right"></span></h4>
+                                                </div>
+                                            </div>
+                                            <div class="panel-body text-center">
+                                                <p>Visualizar página de clube futebol</p>
+                                                <hr/>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="panel box-v1">
+                                        <a href="<?=url()->route('franquia.index')?>">
+                                            <div class="panel-heading bg-white border-none">
+                                                <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                                                    <h4 class="text-left">Franquia</h4>
+                                                </div>
+                                                <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                                                    <h4><span class="icon-menu icons icon text-right"></span></h4>
+                                                </div>
+                                            </div>
+                                            <div class="panel-body text-center">
+                                                <p>Visualizar página de franquias</p>
+                                                <hr/>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!-- end: conteúdo central -->
             </div>
             <!-- end: content -->
