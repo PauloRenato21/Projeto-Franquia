@@ -107,10 +107,12 @@
                                                 <th>rg</th>
                                                 <th>Naturalidade</th>
                                                 <th>Rua</th>
-                                                <th>Numero do Endereço</th>
+                                                <th>Nº</th>
                                                 <th>Bairro</th>
                                                 <th>Telefone</th>
                                                 <th>E-mail</th>
+                                                <th>Cargo</th>
+                                                <th>Franquia</th>
                                                 <th style="width: 50px;">Editar</th>
                                                 <th style="width: 50px;">Excluir</th>
                                             </tr>
@@ -129,6 +131,8 @@
                                                     <td><?= $dados->endereco_bairro ?></td>
                                                     <td><?= $dados->telefone ?></td>
                                                     <td><?= $dados->email ?></td>
+                                                    <td><?= $dados->ca_nome?></td>
+                                                    <td><?= $dados->fr_nome ?></td>
                                                     <td align="center">
                                                         <button onclick="javascript:window.location.href = 'funcionario.cadastrar/id/<?= $dados->id ?>';" style="height: 20px; width: 40px; padding: 0;" class="btn ripple btn-raised btn-info">
                                                             <span class="fa fa-edit"></span>

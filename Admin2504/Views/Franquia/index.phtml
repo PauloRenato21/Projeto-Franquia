@@ -102,6 +102,7 @@
                                                 <th>Cidade</th>
                                                 <th>Telefone</th>
                                                 <th>Email</th>
+                                                <th>Clube</th>
                                                 <th style="width: 50px;">Editar</th>
                                                 <th style="width: 50px;">Excluir</th>
                                             </tr>
@@ -120,6 +121,7 @@
                                                     <td><?= $dados->cidade ?></td>
                                                     <td><?= $dados->telefone ?></td>
                                                     <td><?= $dados->email ?></td>
+                                                    <td><?= $dados->cf_nome ?></td>
                                                     <td align="center">
                                                         <button onclick="javascript:window.location.href = 'franquia.cadastrar/id/<?= $dados->id ?>';" style="height: 20px; width: 40px; padding: 0;" class="btn ripple btn-raised btn-info">
                                                             <span class="fa fa-edit"></span>

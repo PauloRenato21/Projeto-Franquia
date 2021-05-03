@@ -22,7 +22,6 @@ class TurmaController extends Controller
     public function index() {
         $dados_turma = $this-> turma-> getAllTurma();
         
-        
         return $this-> render('turma/index', [
             'dados_turma' => $dados_turma,
         ]);

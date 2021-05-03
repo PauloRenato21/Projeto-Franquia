@@ -96,6 +96,8 @@
                                                 <th>Turno</th>
                                                 <th>Horario Inicial</th>
                                                 <th>Horario Termino</th>
+                                                <th>Categoria</th>
+                                                <th>Franquia</th>
                                                 <th style="width: 50px;">Editar</th>
                                                 <th style="width: 50px;">Excluir</th>
                                             </tr>
@@ -108,6 +110,9 @@
                                                     <td><?= $dados->turno ?></td>
                                                     <td><?= $dados->horario_inicial ?></td>
                                                     <td><?= $dados->horario_termino ?></td>
+                                                    <td><?= $dados->ca_nome ?></td>
+                                                    <td><?= $dados->fa_nome ?></td>
+                                                    
                                                     <td align="center">
                                                         <button onclick="javascript:window.location.href = 'turma.cadastrar/id/<?= $dados->id ?>';" style="height: 20px; width: 40px; padding: 0;" class="btn ripple btn-raised btn-info">
                                                             <span class="fa fa-edit"></span>

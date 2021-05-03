@@ -95,18 +95,14 @@
                                                 <th>Nome</th>
                                                 <th>CPF</th>
                                                 <th>Data Nascimento</th>
-                                                <th>Endereço Rua</th>
-                                                <th>Endereço Nº</th>
-                                                <th>Endereço Bairro</th>
-                                                <th>Endereço CEP</th>
+                                                <th>Rua</th>
+                                                <th>Nº</th>
+                                                <th>Bairro</th>
+                                                <th>CEP</th>
                                                 <th>Naturalidade</th>
-                                                <th>Problema de Saúde</th>
-                                                <th>Alergia</th>
-                                                <th>Medicamento</th>
                                                 <th>Telefone</th>
                                                 <th>Email</th>
                                                 <th>Turma</th>
-                                                <th>Responsável</th>
                                                 <th style="width: 50px;">Editar</th>
                                                 <th style="width: 50px;">Excluir</th>
                                             </tr>
@@ -123,13 +119,9 @@
                                                     <td><?= $dados->endereco_bairro ?></td>
                                                     <td><?= $dados->endereco_CEP ?></td>
                                                     <td><?= $dados->naturalidade ?></td>
-                                                    <td><?= $dados->problema_saude ?></td>
-                                                    <td><?= $dados->alergia ?></td>
-                                                    <td><?= $dados->medicamento ?></td>
                                                     <td><?= $dados->telefone ?></td>
                                                     <td><?= $dados->email ?></td>
-                                                    <td><?= $dados->fk_turma_id ?></td>
-                                                    <td><?= $dados->fk_Responsavel_id ?></td>
+                                                    <td><?= $dados->turma_nome?></td>
                                                     <td align="center">
                                                         <button onclick="javascript:window.location.href = 'atleta.cadastrar/id/<?= $dados->id ?>';" style="height: 20px; width: 40px; padding: 0;" class="btn ripple btn-raised btn-info">
                                                             <span class="fa fa-edit"></span>
