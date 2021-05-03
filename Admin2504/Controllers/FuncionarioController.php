@@ -1,16 +1,22 @@
 <?php
 namespace Admin2504\Controllers;
 
+use Admin2504\Models\Cargo;
+use Admin2504\Models\Franquia;
 use Foundation\Controller;
 use Admin2504\Models\Funcionario;
 
 class FuncionarioController extends Controller
 {
     protected $funcionario;
+    protected $franquia;
+    protected $cargo;
 
     public function __construct() {
 
-        $this-> funcionario = new Funcionario(); 
+        $this-> funcionario = new Funcionario();
+        $this->franquia = new Franquia();
+        $this->cargo = new Cargo();
     }
 
     public function index() {
@@ -25,6 +31,8 @@ class FuncionarioController extends Controller
         $id = $this-> getParam('id');
 
         $dados_funcionario = null;
+        $dados_franquia = $this->franquia->getAllFranquia();
+        $dados_cargo = $this->cargo->getAllCargo();
 
         if ($id) {
             $dados_funcionario = $this-> funcionario-> getById($id);
@@ -32,6 +40,8 @@ class FuncionarioController extends Controller
 
         return $this-> render('funcionario/manipulador', [ 
             'dados_funcionario' => $dados_funcionario,
+            'dados_franquia' => $dados_franquia,
+            'dados_cargo' => $dados_cargo,
         ]);
     }
 
@@ -48,7 +58,9 @@ class FuncionarioController extends Controller
             'endereco_numero' => input()-> get('endereco_numero'),
             'endereco_bairro' => input()-> get('endereco_bairro'),
             'telefone' => input()-> get('telefone'),
-            'email' => input()-> get('email')
+            'email' => input()-> get('email'),
+            'fk_franquias_id' => input()-> get('franquia_id'),
+            'fk_cargo_id' => input()->get('cargo_id')
         ];
 
         // Atualizar
