@@ -5,6 +5,7 @@ use Foundation\Controller;
 use Admin2504\Models\Turma;
 use Admin2504\Models\Categoria;
 use Admin2504\Models\Franquia;
+use Foundation\Pdf\HelperPDF;
 
 class TurmaController extends Controller
 {
@@ -15,8 +16,8 @@ class TurmaController extends Controller
     public function __construct() {
 
         $this-> turma = new Turma(); 
-        $this->categoria = new Categoria();
-        $this->franquia = new Franquia();
+        $this-> categoria = new Categoria();
+        $this-> franquia = new Franquia();
     }
 
     public function index() {
@@ -84,5 +85,33 @@ class TurmaController extends Controller
         }
 
         return redirect()->route('turma.index');
+    }
+
+    public function criarpdfgeral(){
+        $dados_turma = $this->turma->getAllTurma();
+
+        //BEGIN: CRIAR PDF
+        ob_start();
+        $view = dirname(__FILE__)."/../Views/pdf/pdfTurma.phtml";
+        include_once $view;
+        $html = ob_get_clean();
+
+        $pdf = new HelperPDF();
+        $nome_arquivo = $pdf->criar($html);
+        //END: CRIAR PDF
+        
+        //BEGIN: PREPARAR E INICIAR O DOWNLOAD DO PDF
+        $arquivo = DIR_BASE . "/public/temp/pdf/". $nome_arquivo . ".pdf";
+
+        $file = fopen($arquivo, "r");
+
+        header('Content-Disposition: attachment; filename=' . $nome_arquivo . '.pdf');
+        header('Content-Type: application/pdf');
+        header('Content-Type: application/download');
+        header('Content-Description: File Transfer');
+        header('Content-Length: ' . filesize($file));
+        readfile($file);
+        exit();
+        //END: PREPARAR E INICIAR O DOWNLOAD DO PDF
     }
 }

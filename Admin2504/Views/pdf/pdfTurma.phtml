@@ -1,0 +1,60 @@
+<?php
+if(count($dados_turma) > 0) {
+    ?>
+    <div id="conteudorelatorio">
+        <table id="tbltitulo" cellpadding="0" cellspacing="0">
+            <tr>
+                <td><p class="titulorelatorio">TURMA<p></p></td>
+            </tr>
+        </table>
+
+        <table id="tbldados">
+            <?php foreach ($dados_turma as $dados): ?>
+            <tr>
+                <td><strong>ID:</strong><br><?=$dados->id?></td>
+                <td><strong>Nome:</strong><br><?=$dados->nome?></td>
+                <td><strong>Turno:</strong><br><?=$dados->turno?></td>
+                <td><strong>Horário Inicial:</strong><br><?=$dados->horario_inicial?></td>
+                <td><strong>Horário Término:</strong><br><?=$dados->horario_termino?></td>
+                <td><strong>Categoria:</strong><br><?=$dados->ca_nome?></td>
+                <td><strong>Franquia:</strong><br><?=$dados->fa_nome?></td>
+            </tr>
+            <?php endforeach; ?>
+        </table>
+    </div>
+
+    <style>
+        #tbldados, #tblidentificacao, #tbltitulo{
+            width: 100%;
+            border: 1px solid #000000;
+            margin-bottom: 15px;
+            border-collapse: collapse;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px;
+        }
+
+        #tbldados tr td, #tblcomplementar tr td{
+            border: 1px solid #000000;
+            padding: 3px;
+        }
+
+        #tbltitulo tr td{
+            padding: 3px;
+            text-align: center;
+        }
+
+        #tblidentificacao tr td{
+            padding: 3px;
+        }
+
+        p.titulorelatorio{
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+    </style>
+
+    <?php
+}
+?>
