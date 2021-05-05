@@ -23,12 +23,12 @@ return [
     'cargo.excluir' => ['cargo', 'excluir'],
 
     'atleta.index' => ['atleta', 'index'],
-    'atleta.cadastrar' => ['atleta', 'cadastrar'],
+    'atleta.editar' => ['atleta', 'editar'],
     'atleta.salvar' => ['atleta', 'salvar'],
     'atleta.excluir' => ['atleta', 'excluir'],
 
     'responsavel.index' => ['responsavel', 'index'],
-    'responsavel.cadastrar' => ['responsavel', 'cadastrar'],
+    'responsavel.editar' => ['responsavel', 'editar'],
     'responsavel.salvar' => ['responsavel', 'salvar'],
     'responsavel.excluir' => ['responsavel', 'excluir'],
     

@@ -21,7 +21,7 @@ class ResponsavelController extends Controller
         ]);
     }
 
-    public function cadastrar() {
+    public function editar() {
         $id = $this-> getParam('id');
 
         $dados_responsavel = null;

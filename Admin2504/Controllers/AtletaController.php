@@ -4,15 +4,18 @@ namespace Admin2504\Controllers;
 use Foundation\Controller;
 use Admin2504\Models\Atleta;
 use Admin2504\Models\Turma;
+use Admin2504\Models\Responsavel;
 
 class AtletaController extends Controller
 {
     protected $atleta;
+    protected $responsavel;
 
     public function __construct() {
 
         $this-> atleta = new Atleta();
         $this->turma = new Turma();
+        $this->responsavel = new Responsavel();
     }
 
     public function index() {
@@ -23,11 +26,11 @@ class AtletaController extends Controller
         ]);
     }
 
-    public function cadastrar() {
+    public function editar() {
         $id = $this-> getParam('id');
 
-        $dados_atleta = null;
         $dados_turma = $this->turma->getAllTurma();
+        $dados_responsavel = $this->responsavel->getAllResponsavel();
 
         if ($id) {
             $dados_atleta = $this-> atleta-> getById($id);
@@ -36,6 +39,7 @@ class AtletaController extends Controller
         return $this-> render('atleta/manipular', [ 
             'dados_atleta' => $dados_atleta,
             'dados_turma' => $dados_turma,
+            'dados_responsavel' => $dados_responsavel
         ]);
     }
 
@@ -51,13 +55,13 @@ class AtletaController extends Controller
             'endereco_bairro' => input()-> get('endereco_bairro'),
             'endereco_CEP' => input()-> get('endereco_CEP'),
             'naturalidade' => input()-> get('naturalidade'),
-            'problema_saude' => empty(input()-> get('problema_saude')) ? NULL : input()-> get('problema_saude'),
-            'alergia' => empty(input()-> get('alergia')) ? NULL : input()-> get('alergia'),
-            'medicamento' => empty(input()-> get('medicamento')) ? NULL : input()-> get('medicamento'),
+            'problema_saude' => empty(input()-> get('problema_saude')) ? 'Nenhum' : input()-> get('problema_saude'),
+            'alergia' => empty(input()-> get('alergia')) ? 'Nenhum' : input()-> get('alergia'),
+            'medicamento' => empty(input()-> get('medicamento')) ? 'Nenhum' : input()-> get('medicamento'),
             'telefone' => input()-> get('telefone'),
             'email' => input()-> get('email'),
             'fk_turma_id' => input()->get('turma'),
-            'fk_Responsavel_id' => empty(input()-> get('fk_Responsavel_id')) ? NULL : input()-> get('fk_Responsavel_id')
+            'fk_Responsavel_id' => empty(input()-> get('responsavel_id')) ? NULL : input()-> get('responsavel_id')
         ];
 
         // Atualizar
