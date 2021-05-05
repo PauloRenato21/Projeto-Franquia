@@ -28,7 +28,6 @@ class ResponsavelController extends Controller
     }
 
     public function salvar() {
-        $id = $this-> getParam('id');
         
         $dados = [
             'nome' => input()-> get('nome'),
@@ -42,6 +41,7 @@ class ResponsavelController extends Controller
 
         if ($this-> responsavel-> insert($dados)){
             session()-> put('_sucesso', 'Registro cadastrado com sucesso!');
+            return redirect()->route('atleta');
         }else {
             session()-> put('_erro', 'Erro ao cadastrar o registro!');
         }

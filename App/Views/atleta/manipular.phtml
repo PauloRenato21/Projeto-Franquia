@@ -24,7 +24,6 @@
 				<ul class="links">
 					<li><a href="index">Home</a></li>
 					<li class="active"><a href="atleta">Cadastro Atleta</a></li>
-					<li><a href="responsavel">Cadastro Responsável</a></li>
 				</ul>
 			</nav>
 
@@ -43,53 +42,70 @@
                                 <div class="panel-body" style="padding-bottom:30px;">
                                     <div class="col-md-12">
                                         <form class="cmxform" name="frmAtleta" method="POST" action="<?= url()->route('atleta.salvar'); ?>">
-                                            <?php if ($dados_atleta): ?>
-                                                <input type="hidden" name="id" value="<?= $dados_atleta->id; ?>">
-                                            <?php endif; ?>
                                             <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_nome" class="col-sm-2 control-label text-right">Nome*</label>
-                                                <div class="col-sm-10"><input value="<?= $dados_atleta ? $dados_atleta->nome : '' ?>" name="nome" required aria-required="true" type="text" class="form-control"></div>
+                                                <div class="col-sm-10"><input name="nome" required aria-required="true" type="text" class="form-control"></div>
                                             </div>
                                             <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_cpf" class="col-sm-2 control-label text-right">CPF*</label>
-                                                <div class="col-sm-10"><input value="<?= $dados_atleta ? $dados_atleta->cpf : '' ?>" name="cpf" required aria-required="true" pattern="[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}" placeholder="000.000.000-00" type="text" class="form-control"></div>
+                                                <div class="col-sm-10"><input name="cpf" required aria-required="true" pattern="[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}" placeholder="000.000.000-00" type="text" class="form-control"></div>
                                             </div>
                                             <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_dt_nascimento" class="col-sm-2 control-label text-right">Data de Nascimento*</label>
-                                                <div class="col-sm-10"><input value="<?= $dados_atleta ? $dados_atleta->dt_nascimento : '' ?>" name="dt_nascimento" required aria-required="true" type="date" class="form-control"></div>
+                                                <div class="col-sm-10"><input name="dt_nascimento" required aria-required="true" type="date" class="form-control"></div>
                                             </div>
                                             <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_endereco_rua" class="col-sm-2 control-label text-right">Endereço Rua*</label>
-                                                <div class="col-sm-10"><input value="<?= $dados_atleta ? $dados_atleta->endereco_rua : '' ?>" name="endereco_rua" required aria-required="true" type="text" class="form-control"></div>
+                                                <div class="col-sm-10"><input name="endereco_rua" required aria-required="true" type="text" class="form-control"></div>
                                             </div>
                                             <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_endereco_numero" class="col-sm-2 control-label text-right">Endereço Nº*</label>
-                                                <div class="col-sm-10"><input value="<?= $dados_atleta ? $dados_atleta->endereco_numero : '' ?>" name="endereco_numero" required aria-required="true" type="number" class="form-control"></div>
+                                                <div class="col-sm-10"><input name="endereco_numero" required aria-required="true" type="number" class="form-control"></div>
                                             </div>
                                             <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_endereco_bairro" class="col-sm-2 control-label text-right">Endereço Bairro*</label>
-                                                <div class="col-sm-10"><input value="<?= $dados_atleta ? $dados_atleta->endereco_bairro : '' ?>" name="endereco_bairro" required aria-required="true" type="text" class="form-control"></div>
+                                                <div class="col-sm-10"><input name="endereco_bairro" required aria-required="true" type="text" class="form-control"></div>
                                             </div>
                                             <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_endereco_CEP" class="col-sm-2 control-label text-right">Endereço CEP*</label>
-                                                <div class="col-sm-10"><input value="<?= $dados_atleta ? $dados_atleta->endereco_CEP : '' ?>" name="endereco_CEP" required aria-required="true" pattern="[0-9]{5}-[0-9]{3}" placeholder="00000-000" type="text" class="form-control"></div>
+                                                <div class="col-sm-10"><input name="endereco_CEP" required aria-required="true" pattern="[0-9]{5}-[0-9]{3}" placeholder="00000-000" type="text" class="form-control"></div>
                                             </div>
                                             <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_naturalidade" class="col-sm-2 control-label text-right">Naturalidade*</label>
-                                                <div class="col-sm-10"><input value="<?= $dados_atleta ? $dados_atleta->naturalidade : '' ?>" name="naturalidade" required aria-required="true" type="text" class="form-control"></div>
+                                                <div class="col-sm-10"><input name="naturalidade" required aria-required="true" type="text" class="form-control"></div>
                                             </div>
                                             <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_problema_saude" class="col-sm-2 control-label text-right">Problema de Saúde</label>
-                                                <div class="col-sm-10"><input value="<?= $dados_atleta ? $dados_atleta->problema_saude : '' ?>" name="problema_saude" type="text" class="form-control"></div>
+                                                <div class="col-sm-10"><input name="problema_saude" type="text" class="form-control"></div>
                                             </div>
                                             <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_alergia" class="col-sm-2 control-label text-right">Alergia</label>
-                                                <div class="col-sm-10"><input value="<?= $dados_atleta ? $dados_atleta->alergia : '' ?>" name="alergia" type="text" class="form-control"></div>
+                                                <div class="col-sm-10"><input name="alergia" type="text" class="form-control"></div>
                                             </div>
                                             <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_medicamento" class="col-sm-2 control-label text-right">Medicamento</label>
-                                                <div class="col-sm-10"><input value="<?= $dados_atleta ? $dados_atleta->medicamento : '' ?>" name="medicamento" type="text" class="form-control"></div>
+                                                <div class="col-sm-10"><input name="medicamento" type="text" class="form-control"></div>
                                             </div>
                                             <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_telefone" class="col-sm-2 control-label text-right">Telefone*</label>
-                                                <div class="col-sm-10"><input value="<?= $dados_atleta ? $dados_atleta->telefone : '' ?>" name="telefone" required aria-required="true" pattern="[0-9]{2} [0-9]{5}-[0-9]{4}" placeholder="00 00000-0000" type="tel" class="form-control"></div>
+                                                <div class="col-sm-10"><input name="telefone" required aria-required="true" pattern="[0-9]{2} [0-9]{5}-[0-9]{4}" placeholder="00 00000-0000" type="tel" class="form-control"></div>
                                             </div>
                                             <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_email" class="col-sm-2 control-label text-right">Email*</label>
-                                                <div class="col-sm-10"><input value="<?= $dados_atleta ? $dados_atleta->email : '' ?>" name="email" required aria-required="true" placeholder="email@email.com" type="email" class="form-control"></div>
+                                                <div class="col-sm-10"><input name="email" required aria-required="true" placeholder="email@email.com" type="email" class="form-control"></div>
                                             </div>
-                                            <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_fk_turma_id" class="col-sm-2 control-label text-right">ID Turma</label>
-                                                <div class="col-sm-10"><input value="<?= $dados_atleta ? $dados_atleta->fk_turma_id : '' ?>" name="fk_turma_id" type="text" class="form-control"></div>
+                                            <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_fk_turma_id" class="col-sm-2 control-label text-right">Turma</label>
+                                                <div class="col-sm-10">
+                                                    <select name="turma_id">
+                                                        <?php
+                                                            foreach($dados_turma as $count){
+                                                        ?>
+                                                        <option value="<?=$count->id?>"><?=$count->nome?></option>
+                                                        <?php
+                                                            }
+                                                        ?>
+                                                    </select>
+                                                </div>
                                             </div>
-                                            <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_fk_Responsavel_id" class="col-sm-2 control-label text-right">ID Responsável</label>
-                                                <div class="col-sm-10"><input value="<?= $dados_atleta ? $dados_atleta->fk_Responsavel_id : '' ?>" name="fk_Responsavel_id" type="text" class="form-control"></div>
+                                            <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_fk_Responsavel_id" class="col-sm-2 control-label text-right">Responsável</label>
+                                                <div class="col-sm-10">
+                                                    <select name="responsavel_id">
+                                                        <?php
+                                                            foreach($dados_responsavel as $count){
+                                                        ?>
+                                                        <option value="<?=$count->id?>"><?=$count->nome?></option>
+                                                        <?php
+                                                            }
+                                                        ?>
+                                                    </select>
+                                                </div>
                                             </div>
                                             <div class="col-md-12" style="padding-bottom: 10px">
                                                 <div class="col-md-3" style="margin-top:10px; float: right">
