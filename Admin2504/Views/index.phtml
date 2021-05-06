@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <!-- start: Head -->
+    <?php $this->render('common/head'); ?>
+    <!-- end: Head -->
+    <body id="mimin" class="dashboard">
+        <!-- start: Header -->
+        <?php $this->render('common/header'); ?>
+        <!-- end: Header --> 
+
+        <div class="container-fluid mimin-wrapper">
+
+            <!-- start: Left Menu -->
+            <?php $this->render('common/leftMenu'); ?>
+            <!-- end: Left Menu -->
+
+            <!-- start: content -->
+            <div id="content">
+                <!-- start: Top Menu -->
+                <div class="panel">
+                    <div class="panel-body">
+                        <div class="col-md-12 col-sm-12">
+                            <h3 class="animated fadeInLeft">Área Administrativa > Início</h3>
+
+                            <ul class="nav navbar-nav animated fadeInRight">
+                                <li><a href="<?=url()->route('index') ?>">Início</a></li>
+                                <li><a href="<?=url()->route('atleta.index')?>">Atleta</a></li>
+                                <li><a href="<?=url()->route('responsavel.index')?>">Responsável</a></li>
+                                <li><a href="<?=url()->route('funcionario.index')?>">Funcionário</a></li>
+                                <li><a href="<?=url()->route('cargo.index')?>">Cargo</a></li>
+                                <li><a href="<?=url()->route('turma.index')?>">Turma</a></li>
+                                <li><a href="<?=url()->route('categoria.index')?>">Categoria</a></li>
+                                <li><a href="<?=url()->route('clubeFutebol.index')?>">Clube Futebol</a></li>
+                                <li><a href="<?= url()->route('franquia.index')?>">Franquia</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- end: Top Menu -->
+
+                <!-- start: conteúdo central -->
+                
+                <div class="col-md-12" style="padding:20px;">
+                    <div class="col-md-12 padding-0">
+                        <div class="col-md-12 padding-0">
+                            <div class="col-md-12 padding-0">
+                                <div class="col-md-4">
+                                    <div class="panel box-v1">
+                                        <a href="<?=url()->route('atleta.index')?>">
+                                            <div class="panel-heading bg-white border-none">
+                                                <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                                                    <h4 class="text-left">Atleta</h4>
+                                                </div>
+                                                <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                                                    <h4><span class="icon-menu icons icon text-right"></span></h4>
+                                                </div>
+                                            </div>
+                                            <div class="panel-body text-center">
+                                                <p>Visualizar página de atletas</p>
+                                                <hr/>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="panel box-v1">
+                                        <a href="<?=url()->route('responsavel.index')?>">
+                                            <div class="panel-heading bg-white border-none">
+                                                <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                                                    <h4 class="text-left">Responsável</h4>
+                                                </div>
+                                                <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                                                    <h4><span class="icon-menu icons icon text-right"></span></h4>
+                                                </div>
+                                            </div>
+                                            <div class="panel-body text-center">
+                                                <p>Visualizar página de responsáveis</p>
+                                                <hr/>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="panel box-v1">
+                                        <a href="<?=url()->route('funcionario.index')?>">
+                                            <div class="panel-heading bg-white border-none">
+                                                <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                                                    <h4 class="text-left">Funcionário</h4>
+                                                </div>
+                                                <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                                                    <h4><span class="icon-menu icons icon text-right"></span></h4>
+                                                </div>
+                                            </div>
+                                            <div class="panel-body text-center">
+                                                <p>Visualizar página de funcionários</p>
+                                                <hr/>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 padding-0">
+                        <div class="col-md-12 padding-0">
+                            <div class="col-md-12 padding-0">
+                                <div class="col-md-4">
+                                    <div class="panel box-v1">
+                                        <a href="<?=url()->route('cargo.index')?>">
+                                            <div class="panel-heading bg-white border-none">
+                                                <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                                                    <h4 class="text-left">Cargo</h4>
+                                                </div>
+                                                <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                                                    <h4><span class="icon-menu icons icon text-right"></span></h4>
+                                                </div>
+                                            </div>
+                                            <div class="panel-body text-center">
+                                                <p>Visualizar página de cargos</p>
+                                                <hr/>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="panel box-v1">
+                                        <a href="<?=url()->route('turma.index')?>">
+                                            <div class="panel-heading bg-white border-none">
+                                                <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                                                    <h4 class="text-left">Turma</h4>
+                                                </div>
+                                                <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                                                    <h4><span class="icon-menu icons icon text-right"></span></h4>
+                                                </div>
+                                            </div>
+                                            <div class="panel-body text-center">
+                                                <p>Visualizar página de turmas</p>
+                                                <hr/>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="panel box-v1">
+                                        <a href="<?=url()->route('categoria.index')?>">
+                                            <div class="panel-heading bg-white border-none">
+                                                <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                                                    <h4 class="text-left">Categoria</h4>
+                                                </div>
+                                                <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                                                    <h4><span class="icon-menu icons icon text-right"></span></h4>
+                                                </div>
+                                            </div>
+                                            <div class="panel-body text-center">
+                                                <p>Visualizar página de categorias</p>
+                                                <hr/>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 padding-0">
+                        <div class="col-md-12 padding-0">
+                            <div class="col-md-12 padding-0">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-4">
+                                    <div class="panel box-v1">
+                                        <a href="<?=url()->route('clubeFutebol.index')?>">
+                                            <div class="panel-heading bg-white border-none">
+                                                <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                                                    <h4 class="text-left">Clube Futebol</h4>
+                                                </div>
+                                                <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                                                    <h4><span class="icon-menu icons icon text-right"></span></h4>
+                                                </div>
+                                            </div>
+                                            <div class="panel-body text-center">
+                                                <p>Visualizar página de clube futebol</p>
+                                                <hr/>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="panel box-v1">
+                                        <a href="<?=url()->route('franquia.index')?>">
+                                            <div class="panel-heading bg-white border-none">
+                                                <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                                                    <h4 class="text-left">Franquia</h4>
+                                                </div>
+                                                <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                                                    <h4><span class="icon-menu icons icon text-right"></span></h4>
+                                                </div>
+                                            </div>
+                                            <div class="panel-body text-center">
+                                                <p>Visualizar página de franquias</p>
+                                                <hr/>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end: conteúdo central -->
+            </div>
+            <!-- end: content -->
+        </div>
+
+        <!-- start: Mobile -->
+        <?php $this->render('common/mobileMenu'); ?>
+        <!-- end: Mobile -->
+
+        <!-- start: Javascript -->
+        <script src="<?=assets()->js('jquery.min.js');?>"></script>
+        <script src="<?=assets()->js('jquery.ui.min.js');?>"></script>
+        <script src="<?=assets()->js('bootstrap.min.js');?>"></script>
+
+        <!-- plugins -->
+        <script src="<?=assets()->js('plugins/moment.min.js');?>"></script>
+        <script src="<?=assets()->js('plugins/chart.min.js');?>"></script>
+        <script src="<?=assets()->js('plugins/jquery.nicescroll.js');?>"></script>
+
+        <!-- custom -->
+        <script src="<?=assets()->js('main.js');?>"></script>
+
+        <!-- end: Javascript -->
+    </body>
+</html>

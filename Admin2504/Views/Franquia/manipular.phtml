@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <!-- start: Head -->
+    <?php $this->render('common/head'); ?> 
+    <!-- end: Head -->
+
+    <body id="mimin" class="dashboard">
+        <!-- start: Header -->
+        <?php $this->render('common/header'); ?>
+        <!-- end: Header --> 
+
+        <div class="container-fluid mimin-wrapper">
+
+            <!-- start: Left Menu -->
+            <?php $this->render('common/leftMenu'); ?>
+            <!-- end: Left Menu -->
+
+            <!-- start: content -->
+            <div id="content">
+                <!-- start: Top Menu -->
+                <div class="panel">
+                    <div class="panel-body">
+                        <div class="col-md-12 col-sm-12">
+                            <?php if ($dados_franquia): ?> 
+                                <h3 class="animated fadeInLeft">Área Administrativa > Franquia > Alterar</h3>
+                            <?php else: ?>
+                                <h3 class="animated fadeInLeft">Área Administrativa > Franquia > Cadastrar</h3>
+                            <?php endif; ?>
+
+                            <ul class="nav navbar-nav animated fadeInRight">
+                                <li><a href="<?=url()->route('index') ?>">Início</a></li>
+                                <li><a href="<?=url()->route('atleta.index')?>">Atleta</a></li>
+                                <li><a href="<?=url()->route('responsavel.index')?>">Responsável</a></li>
+                                <li><a href="<?=url()->route('funcionario.index')?>">Funcionário</a></li>
+                                <li><a href="<?=url()->route('cargo.index')?>">Cargo</a></li>
+                                <li><a href="<?=url()->route('turma.index')?>">Turma</a></li>
+                                <li><a href="<?=url()->route('categoria.index')?>">Categoria</a></li>
+                                <li><a href="<?=url()->route('clubeFutebol.index')?>">Clube Futebol</a></li>
+                                <li><a href="<?=url()->route('franquia.index')?>">Franquia</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- end: Top Menu -->
+
+                <!-- start: conteúdo central -->
+                <div class="form-element">
+                    <div class="col-md-12 padding-0">
+                        <div class="col-md-12">
+                            <div class="panel form-element-padding">
+                                <div id="msgformulario" class="alert alert-primary" role="alert">* Campos Obrigatórios!</div>
+                                <div class="panel-heading">
+                                    <?php if ($dados_franquia): ?>
+                                        <h4>Franquia > Alterar</h4>
+                                    <?php else: ?>
+                                        <h4>Franquia > Novo</h4>
+                                    <?php endif; ?>
+                                </div>
+                                <div class="panel-body" style="padding-bottom:30px;">
+                                    <div class="col-md-12">
+                                        <form class="cmxform" name="frmCargo" method="POST" action="<?= url()->route('franquia.salvar'); ?>">
+                                            <?php if ($dados_franquia): ?>
+                                                <input type="hidden" name="id" value="<?= $dados_franquia->id; ?>">
+                                            <?php endif; ?>
+                                            <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_nome" class="col-sm-2 control-label text-right">Nome*</label>
+                                                <div class="col-sm-10"><input value="<?= $dados_franquia ? $dados_franquia->nome : '' ?>" name="nome" required aria-required="true" type="text" class="form-control"></div>
+                                            </div>
+                                            <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_nome" class="col-sm-2 control-label text-right">CNPJ*</label>
+                                                <div class="col-sm-10"><input value="<?= $dados_franquia ? $dados_franquia->cnpj : '' ?>" name="cnpj" required aria-required="true" type="text" class="form-control" placeholder="00.000.000/0000-00"></div>
+                                            </div>
+                                            <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_nome" class="col-sm-2 control-label text-right">Endereço Rua*</label>
+                                                <div class="col-sm-10"><input value="<?= $dados_franquia ? $dados_franquia->endereco_rua : '' ?>" name="rua" required aria-required="true" type="text" class="form-control"></div>
+                                            </div>
+                                            <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_nome" class="col-sm-2 control-label text-right">Endereço Número*</label>
+                                                <div class="col-sm-10"><input value="<?= $dados_franquia ? $dados_franquia->endereco_numero : '' ?>" name="numero" required aria-required="true" type="text" class="form-control"></div>
+                                            </div>
+                                            <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_nome" class="col-sm-2 control-label text-right">Endereço Bairro*</label>
+                                                <div class="col-sm-10"><input value="<?= $dados_franquia ? $dados_franquia->endereco_bairro : '' ?>" name="bairro" required aria-required="true" type="text" class="form-control"></div>
+                                            </div>
+                                            <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_nome" class="col-sm-2 control-label text-right">Endereço Cep*</label>
+                                                <div class="col-sm-10"><input value="<?= $dados_franquia ? $dados_franquia->endereco_CEP : '' ?>" name="cep" required aria-required="true" type="text" class="form-control" pattern="[0-9]{5}-[0-9]{3}" placeholder="00000-000"></div>
+                                            </div>
+                                            <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_nome" class="col-sm-2 control-label text-right">Estado*</label>
+                                                <div class="col-sm-10"><input value="<?= $dados_franquia ? $dados_franquia->estado : '' ?>" name="estado" required aria-required="true" type="text" class="form-control"></div>
+                                            </div>
+                                            <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_nome" class="col-sm-2 control-label text-right">Cidade*</label>
+                                                <div class="col-sm-10"><input value="<?= $dados_franquia ? $dados_franquia->cidade : '' ?>" name="cidade" required aria-required="true" type="text" class="form-control"></div>
+                                            </div>
+                                            <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_nome" class="col-sm-2 control-label text-right">Telefone*</label>
+                                                <div class="col-sm-10"><input value="<?= $dados_franquia ? $dados_franquia->telefone : '' ?>" name="telefone" required aria-required="true" type="text" class="form-control" pattern="[0-9]{2}[0-9]{5}-[0-9]{4}" placeholder="00 00000-0000"></div>
+                                            </div>
+                                            <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_nome" class="col-sm-2 control-label text-right">Email*</label>
+                                                <div class="col-sm-10"><input value="<?= $dados_franquia ? $dados_franquia->email : '' ?>" name="email" required aria-required="true" type="email" class="form-control" placeholder="email@email.com"></div>
+                                            </div>
+                                            <div class="col-md-12" style="padding-bottom: 10px"><label id="lbl_nome" class="col-sm-2 control-label text-right">Clube Futebol*</label>
+                                            <div class="col-sm-10">
+                                                <select name="clube" id="id" style="margin-top: 0px;">
+                                                    <?php
+                                                        foreach($dados_clube as $count){
+                                                    ?>
+                                                    <option value="<?=$count->id?>"><?=$count->nome?></option>
+                                                    <?php
+                                                        }
+                                                    ?>
+                                                </select>
+                                            </div>
+                                            </div>
+                                            <div class="col-md-12" style="padding-bottom: 10px">
+                                                <div class="col-md-3" style="margin-top:10px; float: right">
+                                                    <button id="btnEnviar" class="btn ripple btn-raised btn-success" type="submit">
+                                                        <div>
+                                                            <span class="fa fa-save"></span>
+                                                            <span style="margin-left: 10px;">Salvar</span>
+                                                            <span class="ink animate" style="height: 87px; width: 87px; top: -35.5px; left: -1px;"></span>
+                                                        </div>
+                                                    </button>
+                                                </div>
+                                                <div class="col-md-3" style="margin-top:10px; float: right">
+                                                    <button id="btnCancelar" onclick="javascript:window.location.href = '<?= url()->route('franquia.index') ?>';" class="btn ripple btn-raised btn-danger" type="reset">
+                                                        <div>
+                                                            <span class="fa fa-close"></span>
+                                                            <span style="margin-left: 10px;">Cancelar</span>
+                                                            <span class="ink animate" style="height: 87px; width: 87px; top: -35.5px; left: -1px;"></span>
+                                                        </div>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end: conteúdo central -->
+            </div>
+            <!-- end: content -->
+        </div>
+
+        <!-- start: Mobile -->
+        <?php $this->render('common/mobileMenu'); ?>
+        <!-- end: Mobile -->
+
+        <!-- start: Javascript -->
+        <script src="<?=assets()->js('jquery.min.js');?>"></script>
+        <script src="<?=assets()->js('jquery.ui.min.js');?>"></script>
+        <script src="<?=assets()->js('bootstrap.min.js');?>"></script>
+
+        <script src="<?=assets()->js('plugins/moment.min.js');?>"></script>
+        <script src="<?=assets()->js('plugins/jquery.knob.js');?>"></script>
+        <script src="<?=assets()->js('plugins/bootstrap-material-datetimepicker.js');?>"></script>
+        <script src="<?=assets()->js('plugins/jquery.nicescroll.js');?>"></script>
+        <script src="<?=assets()->js('plugins/jquery.mask.min.js');?>"></script>
+        <script src="<?=assets()->js('plugins/select2.full.min.js');?>"></script>
+        <script src="<?=assets()->js('plugins/nouislider.min.js');?>"></script>
+        <script src="<?=assets()->js('plugins/ion.rangeSlider.min.js');?>"></script>
+        <script src="<?=assets()->js('plugins/jquery.validate.min.js');?>"></script>
+        <script src="<?=assets()->js('plugins/summernote.min.js');?>"></script>
+
+        <script src="<?=assets()->js('main.js');?>"></script>
+
+        <!-- end: Javascript -->
+    </body>
+</html>
