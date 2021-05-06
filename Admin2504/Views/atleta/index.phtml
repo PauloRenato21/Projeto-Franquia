@@ -94,6 +94,7 @@
                                                 <th>Telefone</th>
                                                 <th>Email</th>
                                                 <th>Turma</th>
+                                                <th>Responsável</th>
                                                 <th style="width: 50px;">Editar</th>
                                                 <th style="width: 50px;">Excluir</th>
                                             </tr>
@@ -112,7 +113,8 @@
                                                     <td><?= $dados->naturalidade ?></td>
                                                     <td><?= $dados->telefone ?></td>
                                                     <td><?= $dados->email ?></td>
-                                                    <td><?= $dados->turma_nome?></td>
+                                                    <td><?= $dados->tur_nome ?></td>
+                                                    <td><?= empty($dados->res_nome) ? 'Nenhum' : $dados->res_nome ?></td>
                                                     <td align="center">
                                                         <button onclick="javascript:window.location.href = 'atleta.editar/id/<?= $dados->id ?>';" style="height: 20px; width: 40px; padding: 0;" class="btn ripple btn-raised btn-info">
                                                             <span class="fa fa-edit"></span>
