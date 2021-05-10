@@ -1,4 +1,11 @@
-# Aula MVC - SENAI - 04/2021
+# Projeto Franquia - Senai MG
+
+## Github Contribuidores
+
+- [Eliezer](https://github.com/EliezerAVS)
+- [Alexandre](https://github.com/alexhgame)
+
+---
 
 ## Checklist - Virtual HOST
 - Criar o virtual host no XAMPP:
